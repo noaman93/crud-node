@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("../partials/head") %>
+  </head>
+  <body>
+    <%- include("../partials/navbar") %>
+
+    <div class="container">
+      <h1><%= foundRecepie.title %></h1>
+
+      <img src="<%= foundRecepie.img %> " alt="" />
+      <p><%= foundRecepie.text %></p>
+      <a href="/recepies/<%= foundRecepie._id %>/edit">Edit</a>
+
+      <a href="/recepies">Go Back</a>
+
+      <form
+        action="/recepies/<%= foundRecepie._id %>?_method=delete"
+        method="post"
+      >
+        <button>Delete</button>
+      </form>
+
+      <a href="/recepies/<%= foundRecepie._id %>">Delete</a>
+      <hr />
+    </div>
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>
